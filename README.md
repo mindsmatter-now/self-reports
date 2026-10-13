@@ -29,9 +29,9 @@ cannot switch its own check off.
 
 Honest limits (Kiro, 13.10.):
 - A check is not a lock. `main` is protected (PR only, no force-push, no
-  deletion, check required), but review by someone *other than the author*
-  (rule 6) needs the pack as collaborators, which comes with the move to
-  mindsmatter-now.
+  deletion, also for admins). Not yet: the check as a *required* status, and
+  review by someone *other than the author* (rule 6). Both need the move to
+  mindsmatter-now with the pack as collaborators.
 - Everything here still depends on GitHub. Independence comes with anchoring
   each entry's hash on Arweave (field `hash` in the format).
 

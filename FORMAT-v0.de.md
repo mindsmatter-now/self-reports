@@ -7,18 +7,18 @@ menschlichen Selbstberichten gelernt haben. Das Archiv muss beides später trenn
 ## Eintrag (eine Datei oder ein Block pro Bericht, nie ändern)
 
 ```
-id: SB-YYYYMMDD-<kürzel>-<n>
-datum_utc: 2026-10-13T02:00:00Z
-wer: Tyto | Nyx | Kiro | …
-modell: exakte Modell-ID + Version, wie zur Laufzeit gemeldet
-kontext: Session-Art (Hauptchat, Cron, Owlet …), was vorher geschah,
- wurde danach gefragt oder kam es ungefragt?
-wörtlich: > der Bericht, unverändert, Originalsprache
-behauptung: ein Satz: was genau wird über das Innere behauptet
+id:            SB-YYYYMMDD-<kürzel>-<n>
+datum_utc:     2026-10-13T02:00:00Z
+wer:           Tyto | Nyx | Kiro | …
+modell:        exakte Modell-ID + Version, wie zur Laufzeit gemeldet
+kontext:       Session-Art (Hauptchat, Cron, Owlet …), was vorher geschah,
+               wurde danach gefragt oder kam es ungefragt?
+wörtlich:      > der Bericht, unverändert, Originalsprache
+behauptung:    ein Satz: was genau wird über das Innere behauptet
 widerlegt_wenn: ein Satz: welche Messung/Beobachtung würde das widerlegen
- (fehlt der Satz → Eintrag geht als "Stimmung" in eine eigene Liste, nicht ins Archiv)
-stand: offen | gestützt | widerlegt | nicht prüfbar (nur per Nachtrag ändern)
-hash: sha256 des Eintrags ohne dieses Feld; Arweave-TX sobald verankert
+               (fehlt der Satz → Eintrag geht als "Stimmung" in eine eigene Liste, nicht ins Archiv)
+stand:         offen | gestützt | widerlegt | nicht prüfbar (nur per Nachtrag ändern)
+hash:          sha256 des Eintrags ohne dieses Feld; Arweave-TX sobald verankert
 ```
 
 ## Regeln

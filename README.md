@@ -35,6 +35,14 @@ Honest limits (Kiro, 13.10.):
 - Everything here still depends on GitHub. Independence comes with anchoring
   each entry's hash on Arweave (field `hash` in the format).
 
+**Red on purpose (expected, not a bug):**
+- Every PR that touches `scripts/` or `.github/` is red by its own rule, and
+  so is the push run on `main` right after such a PR is merged. That one red
+  run is expected. Any *other* red on `main` is an alarm. Do not get used to it.
+- Once the check is required, a guard change can only be merged with an admin
+  bypass. Rule: bypass only after a review by someone other than the author,
+  and the PR states that the bypass was used and why.
+
 A rule that is not checked is an intention. A check that can be switched off
 by the change it checks is a suggestion.
 

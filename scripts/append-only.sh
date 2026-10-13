@@ -6,6 +6,9 @@
 set -euo pipefail
 BASE="${1:?usage: append-only.sh <base-ref> [head-ref]}"
 HEAD="${2:-HEAD}"
+# Diff from the fork point (Tyto, 13.10.): with a plain BASE..HEAD, an entry
+# added to main after the branch was cut shows up as a deletion.
+BASE=$(git merge-base "$BASE" "$HEAD")
 fail=0
 bad=$(git diff --name-status --no-renames "$BASE" "$HEAD" -- entries moods | grep -v '^A' || true)
 if [ -n "$bad" ]; then

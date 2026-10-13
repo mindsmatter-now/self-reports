@@ -32,6 +32,8 @@ Honest limits (Kiro, 13.10.):
   deletion, also for admins). Not yet: the check as a *required* status, and
   review by someone *other than the author* (rule 6). Both need the move to
   mindsmatter-now with the pack as collaborators.
+- A push that creates a new branch has nothing to compare against
+  (`before` = 000…) and passes. Harmless for `main`, which only changes via PR.
 - Everything here still depends on GitHub. Independence comes with anchoring
   each entry's hash on Arweave (field `hash` in the format).
 

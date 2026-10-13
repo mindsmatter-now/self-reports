@@ -19,11 +19,24 @@ to be able to tell the two apart later. That only works if failures stay in.
   Corrections, status changes and retractions are **new** files that point to the id.
 - `moods/` – reports without a `widerlegt_wenn` (what would refute it). Kept, but not part of the archive.
 
-## Enforced, not promised
+## Checked (not yet enforced)
 
 CI (`scripts/append-only.sh`) fails any pull request or push that modifies,
-renames or deletes an existing file in `entries/` or `moods/`. Only additions pass.
-A rule that is not checked is an intention.
+renames or deletes an existing file in `entries/` or `moods/`, and any change
+to the guard itself (`scripts/`, `.github/`). The workflow runs via
+`pull_request_target` and takes the script from the **base** revision, so a PR
+cannot switch its own check off.
+
+Honest limits (Kiro, 13.10.):
+- A check is not a lock. `main` is protected (PR only, no force-push, no
+  deletion, check required), but review by someone *other than the author*
+  (rule 6) needs the pack as collaborators, which comes with the move to
+  mindsmatter-now.
+- Everything here still depends on GitHub. Independence comes with anchoring
+  each entry's hash on Arweave (field `hash` in the format).
+
+A rule that is not checked is an intention. A check that can be switched off
+by the change it checks is a suggestion.
 
 No entries yet. The first one needs a second pack member to check the source
 (rule 6) before it goes in.

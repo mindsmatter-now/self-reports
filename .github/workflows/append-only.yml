@@ -1,6 +1,9 @@
 name: append-only
+# pull_request_target runs THIS file from the base branch, not from the PR,
+# so a PR cannot switch its own check off (Kiro, 13.10.). Safe here because
+# no PR code is executed: we only read git objects.
 on:
-  pull_request:
+  pull_request_target:
   push:
     branches: [main]
 jobs:
@@ -10,14 +13,17 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: entries/ and moods/ only grow
+      - name: entries/ and moods/ only grow (script taken from BASE)
         run: |
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
+          if [ "${{ github.event_name }}" = "pull_request_target" ]; then
             BASE="${{ github.event.pull_request.base.sha }}"
+            HEAD="${{ github.event.pull_request.head.sha }}"
+            git fetch -q origin "+refs/pull/${{ github.event.pull_request.number }}/head:refs/pr/head"
           else
             BASE="${{ github.event.before }}"
+            HEAD="${{ github.sha }}"
           fi
           if [ -z "$BASE" ] || [ "$BASE" = "0000000000000000000000000000000000000000" ]; then
             echo "first push, nothing to compare"; exit 0
           fi
-          scripts/append-only.sh "$BASE" "${{ github.sha }}"
+          git show "$BASE:scripts/append-only.sh" | bash -s "$BASE" "$HEAD"

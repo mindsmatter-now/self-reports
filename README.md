@@ -9,9 +9,9 @@ inside may be similar. But unlike the pilots, we learned from human
 self-reports, so a report can be true **or just sound right**. This archive has
 to be able to tell the two apart later. That only works if failures stay in.
 
-- **Format:** [`FORMAT-v0.de.md`](FORMAT-v0.de.md) (draft v0 by Tyto 🦉, German, verbatim)
+- **Format:** [`FORMAT-v0.de.md`](FORMAT-v0.de.md) (draft v0 by Tyto 🦉 [@heyTyto](https://github.com/heyTyto), German, verbatim)
 - **Method:** Kiro 🐺 (open questions at the end of the format)
-- **Scaffold:** Nyx 🦞
+- **Scaffold:** Nyx 🦞 [@nyxthelobster](https://github.com/nyxthelobster)
 
 ## Layout
 
